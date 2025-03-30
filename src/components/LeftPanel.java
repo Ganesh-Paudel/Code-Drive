@@ -12,18 +12,27 @@ import javax.swing.JPanel;
 
 public class LeftPanel extends JPanel{
 	
+	//fields that are on the left side
 	String[] fields = {"Code", "DSA", "Visualized", "Solved"};
-	
+	//three panels 
+	/*
+	 * top: App name
+	 * middle: The fields
+	 * bottom: Settings, account
+	 */
 	JPanel topPanel, middlePanel, bottomPanel;
 	JLabel appTitleText, settingText;
 	JLabel[] fieldLabels;
+	
 	
 	private int widthOfLabel = 200;
 	private int heightOfLabel = 700;
 	
 	
 	
-	
+	/**
+	 * Initializes objects, configures the panel and adds the items
+	 */
 	public LeftPanel() {
 		initializeObjects();
 		this.setBounds(0, 0, widthOfLabel, heightOfLabel);
@@ -42,6 +51,9 @@ public class LeftPanel extends JPanel{
 		addObjects();
 	}
 	
+	/**
+	 * initializes all the objects
+	 */
 	private void initializeObjects() {
 		topPanel = new JPanel();
 		middlePanel = new JPanel();
@@ -52,15 +64,22 @@ public class LeftPanel extends JPanel{
 		fieldLabelsConfigs();
 	}
 	
+	/**
+	 * adds all the panesl
+	 */
 	private void addObjects() {
 		this.add(topPanel);
 		this.add(middlePanel);
 		this.add(bottomPanel);
 	}
 	
+	/**
+	 * configuring the topPanel, 
+	 * minimum and max size are to make sure it covers that dimension
+	 */
 	private void topPanelConfig() {
 		topPanel.setBackground(Color.LIGHT_GRAY);
-		topPanel.setPreferredSize(new Dimension(this.widthOfLabel, 120)); // 80% of 600
+		topPanel.setPreferredSize(new Dimension(this.widthOfLabel, 120));
         topPanel.setMaximumSize(new Dimension(this.widthOfLabel, 120));
         topPanel.setMinimumSize(new Dimension(this.widthOfLabel, 120));
         topPanel.setLayout(new GridBagLayout());
@@ -68,9 +87,12 @@ public class LeftPanel extends JPanel{
 		topPanel.add(appTitleText);
 	}
 	
+	/**
+	 * configures the middle panel, 
+	 */
 	private void middlePanelConfig() {
 		middlePanel.setBackground(Color.LIGHT_GRAY);
-		middlePanel.setPreferredSize(new Dimension(this.widthOfLabel, 460)); // 80% of 600
+		middlePanel.setPreferredSize(new Dimension(this.widthOfLabel, 460));
         middlePanel.setMaximumSize(new Dimension(this.widthOfLabel, 460));
         middlePanel.setMinimumSize(new Dimension(this.widthOfLabel, 460));
 		middlePanel.setLayout(new BoxLayout(middlePanel, BoxLayout.Y_AXIS));
@@ -83,6 +105,9 @@ public class LeftPanel extends JPanel{
 			
 		}
 	}
+	/**
+	 * congifures teh bottom panel 
+	 */
 	private void bottomPanelConfig() {		
 		bottomPanel.setBackground(Color.LIGHT_GRAY);
 		bottomPanel.setPreferredSize(new Dimension(this.widthOfLabel, 120)); // 80% of 600
@@ -94,6 +119,11 @@ public class LeftPanel extends JPanel{
 		bottomPanel.add(settingText);
 	}
 	
+	/**
+	 * The texts that appears name and settings, it styles them and 
+	 * Settings:
+	 * 		It adds a mouseListener when a cursor is hovering over the element it changes the cursor to pointer(hand cursor)
+	 */
 	private void textConfigs() {
 		appTitleText = new JLabel("Code-Drive");
 		appTitleText.setFont(new Font("Arial", Font.BOLD, 30));
@@ -113,6 +143,10 @@ public class LeftPanel extends JPanel{
 		    }
 		});
 	}
+	
+	/**
+	 * This customizes the fields and also adds mouse listener for the hover effect
+	 */
 	
 	private void fieldLabelsConfigs() {
 		fieldLabels = new JLabel[4];
