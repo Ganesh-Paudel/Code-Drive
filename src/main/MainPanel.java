@@ -5,10 +5,12 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 import components.LeftPanel;
+import components.RightPanel;
 
 public class MainPanel extends JPanel{
 	
 	private LeftPanel leftPanel; // leftPanel is one of the component in the panel 
+	private RightPanel rightPanel;
 	private int screenWidth; // width and height of the frame
 	private int screenHeight; // height of the frame same as the frame
 		
@@ -38,6 +40,7 @@ public class MainPanel extends JPanel{
 	 */
 	private void initializeObjects() {
 		leftPanel = new LeftPanel();
+		rightPanel = new RightPanel();
 	}
 	
 	/**
@@ -45,6 +48,7 @@ public class MainPanel extends JPanel{
 	 */
 	private void addItems() {
 		this.add(leftPanel);
+		this.add(rightPanel);
 	}
 	
 }
