@@ -102,6 +102,16 @@ public class LeftPanel extends JPanel{
 		settingText = new JLabel("Settings");
 		settingText.setFont(new Font("Arial", Font.BOLD, 20));
 //		settingText.setForeground(Color.white);
+		settingText.addMouseListener(new java.awt.event.MouseAdapter() {
+			@Override
+			public void mouseEntered(java.awt.event.MouseEvent e) {
+				settingText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+			}
+			@Override
+		    public void mouseExited(java.awt.event.MouseEvent e) {
+		        settingText.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+		    }
+		});
 	}
 	
 	private void fieldLabelsConfigs() {
@@ -109,8 +119,19 @@ public class LeftPanel extends JPanel{
 		
 		for(int i = 0; i < fields.length; i++) {
 			fieldLabels[i] = new JLabel(fields[i]);
-			fieldLabels[i].setFont(new Font("Arial", Font.BOLD, 15));
+			JLabel label = fieldLabels[i];
+			label.setFont(new Font("Arial", Font.BOLD, 15));
 //			fieldLabels[i].setForeground(Color.white);
+			label.addMouseListener(new java.awt.event.MouseAdapter() {
+				@Override
+				public void mouseEntered(java.awt.event.MouseEvent e) {
+					label.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+				}
+				@Override
+				public void mouseExited(java.awt.event.MouseEvent e) {
+					label.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+				}
+			});
 		}
 	}
 
