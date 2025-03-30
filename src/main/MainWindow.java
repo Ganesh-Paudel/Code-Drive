@@ -34,7 +34,7 @@ public class MainWindow extends JFrame{
 		
 		this.pack();
 		this.setLocationRelativeTo(null);
-//		this.setResizable(false);
+		this.setResizable(false);
 		this.setVisible(true);
 		
 	}
@@ -44,12 +44,13 @@ public class MainWindow extends JFrame{
 		cardPanel = new JPanel(cardLayout);
 		panel = new MainPanel(this ,windowWidth, windowHeight);
 		signIn = new SignIn(this, windowWidth, windowHeight);
-		
+//		
 		cardPanel.add(signIn, "signIn Page");
 		cardPanel.add(panel, "Main Panel");
 	}
 	
 	private void addItems() {
+//		this.add(signIn);
 		this.add(cardPanel);
 	}
 	
